@@ -152,6 +152,25 @@ ok: 14 | modified: 1 | deleted: 0
 
 ---
 
+## How it works
+
+```
+                    INIT                              CHECK
+                     |                                  |
+    [your files] --> | --> SHA256 hash                  |
+                     |        |                         |
+                     v        v                         v
+              +------------------+              +------------------+
+              |  baseline.json   |  <-------->  |  compare hashes  |
+              +------------------+              +------------------+
+                                                        |
+                                         +--------------+--------------+
+                                         |              |              |
+                                        OK          MODIFIED       DELETED
+```
+
+---
+
 ## Use Cases
 
 - Monitor server config files
